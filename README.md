@@ -1,48 +1,64 @@
-# FLOW Architecture
+# FLOW - Référentiel d'Architecture
 
-Mini-site statique de cadrage pour le programme d’entreprise FLOW.
+Ce dépôt contient le site documentaire MkDocs du programme FLOW.
 
 ## Objectif
 
-Ce dépôt sert à prototyper rapidement une documentation navigable autour de :
+Le référentiel vise à structurer progressivement :
 
-1. Vision & ambition
-2. Programme d’entreprise
-3. Business capabilities
-4. Architecture cible
-5. Roadmap
+1. l'introduction et la raison d'être du référentiel ;
+2. la vision du programme FLOW ;
+3. les principes directeurs d'architecture ;
+4. les décisions d'architecture ;
+5. l'architecture de référence FLOW ;
+6. la cartographie du SI ;
+7. la roadmap de transformation ;
+8. la gouvernance du programme ;
+9. les standards et patterns ;
+10. le glossaire.
 
 ## Structure
 
 ```text
 .
-├── index.html
-├── assets/
-│   └── styles.css
-└── pages/
-    ├── 01-vision.html
-    ├── 02-programme.html
-    ├── 03-capabilities.html
-    ├── 04-architecture.html
-    └── 05-roadmap.html
+├── mkdocs.yml
+├── requirements.txt
+├── docs/
+│   ├── index.md
+│   ├── 1-introduction/
+│   ├── 2-vision/
+│   ├── 3-principes-directeurs/
+│   ├── 4-adr/
+│   ├── 5-architecture-reference/
+│   ├── 6-cartographie-si/
+│   ├── 7-roadmap-transformation/
+│   ├── 8-gouvernance-programme/
+│   ├── 9-standards-patterns/
+│   └── 10-glossaire/
+└── .github/workflows/deploy-mkdocs.yml
 ```
+
+## Lancer en local
+
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+Le site local est disponible par défaut sur `http://127.0.0.1:8000`.
 
 ## Publication GitHub Pages
 
-Dans GitHub :
+Le déploiement est géré par le workflow GitHub Actions `.github/workflows/deploy-mkdocs.yml`.
 
-1. Aller dans **Settings > Pages**.
-2. Source : **Deploy from a branch**.
-3. Branch : **main**.
-4. Folder : **/** root.
-5. Sauvegarder.
+À vérifier dans GitHub :
 
-Le site sera ensuite accessible via l’URL GitHub Pages du dépôt.
+1. **Settings > Pages**
+2. Source : **GitHub Actions**
+3. Le workflow `Deploy MkDocs site` se déclenche sur push vers `main` ou manuellement.
 
-## Prochaines évolutions possibles
+## Règle de contribution
 
-- Ajouter une page de glossaire FLOW.
-- Ajouter une cartographie applicative SVG.
-- Ajouter une page par capability.
-- Ajouter un dossier `docs/` ou `content/` si l’on veut séparer contenu et rendu.
-- Transformer ensuite le site en Astro, VitePress ou Docusaurus si le besoin grandit.
+Le contenu éditorial doit être ajouté en Markdown sous `docs/` puis référencé dans `mkdocs.yml`.
+
+Ne pas ajouter de site HTML parallèle à la racine : MkDocs est la source de vérité du référentiel FLOW.
