@@ -1,0 +1,48 @@
+site_name: FLOW - Référentiel d'Architecture
+site_description: Référentiel d'architecture du programme FLOW
+site_url: https://laurent-sintes.github.io/Flow-architecture/
+repo_url: https://github.com/laurent-sintes/Flow-architecture
+repo_name: laurent-sintes/Flow-architecture
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Accueil: index.md
+  - 1. Introduction:
+      - 1.1 Présentation: 1-introduction/1-1-presentation/index.md
+      - 1.1.1 Pourquoi ce référentiel existe-t-il ?: 1-introduction/1-1-presentation/1-pourquoi-ce-referentiel-existe.md
+  - 2. Vision:
+      - 2.1 Fondamentaux: 2-vision/2-1-fondamentaux/index.md
+      - 2.2 Histoire de FLOW: 2-vision/2-2-histoire-flow/index.md
+  - 3. Principes Directeurs:
+      - 3.1 Gouvernance de l'Architecture: 3-principes-directeurs/3-1-gouvernance-architecture/index.md
+      - 3.2 Urbanisation: 3-principes-directeurs/3-2-urbanisation/index.md
+      - 3.3 Coordination: 3-principes-directeurs/3-3-coordination/index.md
+      - 3.4 Données: 3-principes-directeurs/3-4-donnees/index.md
+  - 4. Décisions d'Architecture: 4-adr/index.md
+  - 5. Architecture de Référence FLOW: 5-architecture-reference/index.md
+  - 6. Cartographie du SI: 6-cartographie-si/index.md
+  - 7. Roadmap de Transformation: 7-roadmap-transformation/index.md
+  - 8. Gouvernance du Programme: 8-gouvernance-programme/index.md
+  - 9. Standards & Patterns: 9-standards-patterns/index.md
+  - 10. Glossaire: 10-glossaire/index.md
